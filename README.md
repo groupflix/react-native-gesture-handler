@@ -1,68 +1,60 @@
-# React Native for Web
+<img src="https://user-images.githubusercontent.com/16062886/117444014-2d1ffd80-af39-11eb-9bbb-33c320599d93.png" width="100%" alt="React Native Gesture Handler by Software Mansion">
 
-[![npm version][package-badge]][package-url] [![Build Status][ci-badge]][ci-url] [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
+### Declarative API exposing platform native touch and gesture system to React Native.
 
-"React Native for Web" makes it possible to run [React Native][react-native-url] components and APIs on the web using React DOM.
+React Native Gesture Handler provides native-driven gesture management APIs for building best possible touch-based experiences in React Native.
+
+With this library gestures are no longer controlled by the JS responder system, but instead are recognized and tracked in the UI thread.
+It makes touch interactions and gesture tracking not only smooth, but also dependable and deterministic.
+
+## Installation
+
+Check [getting started](https://docs.swmansion.com/react-native-gesture-handler/docs/#installation) section of our docs for the detailed installation instructions.
+
+## Fabric
+
+To learn how to use `react-native-gesture-handler` with Fabric architecture, head over to [Fabric README](README-Fabric.md). Instructions on how to run Fabric Example within this repo can be found in the [FabricExample README](FabricExample/README.md).
 
 ## Documentation
 
-The [documentation site](https://necolas.github.io/react-native-web/) ([source](https://github.com/necolas/react-native-web/blob/master/packages/react-native-web-docs)) covers installation, guides, and APIs.
+Check out our dedicated documentation page for info about this library, API reference and more: [https://docs.swmansion.com/react-native-gesture-handler/docs/](https://docs.swmansion.com/react-native-gesture-handler/docs/)
 
-## Example
+## Examples
 
-The [examples app](https://p9t5cp.sse.codesandbox.io/) ([source](https://github.com/necolas/react-native-web/blob/master/packages/react-native-web-examples)) demonstrates many available features. Fork the [codesandbox](https://codesandbox.io/s/github/necolas/react-native-web/tree/master/packages/react-native-web-examples) to make changes and see the results.
+If you want to play with the API but don't feel like trying it on a real app, you can run the example project. Clone the repo, go to the `example` folder and run:
 
-You'll notice that there is no reference to `react-dom` in components. The `App` component that is shown below is defined using the APIs and Components of React Native, but it can also be rendered on the web using React Native for Web.
-
-```js
-// Example component
-import React from 'react';
-import { AppRegistry, StyleSheet, Text, View } from 'react-native';
-
-class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.box}>
-        <Text style={styles.text}>Hello, world!</Text>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  box: { padding: 10 },
-  text: { fontWeight: 'bold' }
-});
-
-AppRegistry.registerComponent('App', () => App);
-AppRegistry.runApplication('App', { rootTag: document.getElementById('react-root') });
+```bash
+yarn install
 ```
 
-## Contributing
+If you are running on ios, run `pod install` in the ios folder
 
-Development happens in the open on GitHub and we are grateful for contributions including bugfixes, improvements, and ideas. Read below to learn how you can take part in improving React Native for Web.
+Run `yarn start` to start the metro bundler
 
-### Code of conduct
+Run `yarn android` or `yarn ios` (depending on which platform you want to run the example app on).
 
-This project expects all participants to adhere to Meta's OSS [Code of Conduct][code-of-conduct]. Please read the full text so that you can understand what actions will and will not be tolerated.
+You will need to have an Android or iOS device or emulator connected as well as `react-native-cli` package installed globally.
 
-### Contributing guide
+## React Native Support
 
-Read the [contributing guide][contributing-url] to learn about the development process, how to propose bugfixes and improvements, and how to build and test your changes to React Native for Web.
+| version | react-native version |
+| ------- | -------------------- |
+| 2.0.0+  | 0.63.0+              |
+| 1.4.0+  | 0.60.0+              |
+| 1.1.0+  | 0.57.2+              |
+| <1.1.0  | 0.50.0+              |
 
-### Good first issues
-
-To help you get you familiar with the contribution process, there is a list of [good first issues][good-first-issue-url] that contain bugs which have a relatively limited scope. This is a great place to get started.
+It may be possible to use newer versions of react-native-gesture-handler on React Native with version <= 0.59 by reverse Jetifying.
+Read more on that here <https://github.com/mikehardy/jetifier#to-reverse-jetify--convert-node_modules-dependencies-to-support-libraries>
 
 ## License
 
-React Native for Web is [MIT licensed](./LICENSE). By contributing to React Native for Web, you agree that your contributions will be licensed under its MIT license.
+Gesture handler library is licensed under [The MIT License](LICENSE).
 
-[package-badge]: https://img.shields.io/npm/v/react-native-web.svg?style=flat
-[package-url]: https://www.npmjs.com/package/react-native-web
-[ci-badge]: https://github.com/necolas/react-native-web/workflows/tests/badge.svg
-[ci-url]: https://github.com/necolas/react-native-web/actions
-[react-native-url]: https://reactnative.dev/
-[contributing-url]: https://github.com/necolas/react-native-web/blob/master/.github/CONTRIBUTING.md
-[good-first-issue-url]: https://github.com/necolas/react-native-web/labels/good%20first%20issue
-[code-of-conduct]: https://opensource.fb.com/code-of-conduct/
+## Credits
+
+This project has been build and is maintained thanks to the support from [Shopify](https://shopify.com), [Expo.io](https://expo.io) and [Software Mansion](https://swmansion.com)
+
+[![shopify](https://avatars1.githubusercontent.com/u/8085?v=3&s=100 'Shopify.com')](https://shopify.com)
+[![expo](https://avatars2.githubusercontent.com/u/12504344?v=3&s=100 'Expo.io')](https://expo.io)
+[![swm](https://logo.swmansion.com/logo?color=white&variant=desktop&width=150&tag=react-native-reanimated-github 'Software Mansion')](https://swmansion.com)
